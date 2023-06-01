@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bo">
+    <div class="main">
+        <div class="first">
+            <i onclick="underline()" class="fa-solid fa-underline"></i>
+            <i onclick="italic()" class="fa-sharp fa-solid fa-italic"></i>
+            <i onclick="bold()" class="fa-sharp fa-solid fa-bold"></i>
+            <i onclick="center()" class="fa-solid fa-bars"></i>
+            <i  onclick="right()" class="fa-regular fa-angles-right"></i>
+            <button onclick="count()" id="btn">word count</button>
+            <p id="para1">word:</p>
+            <button onclick="letterCounting()" id="btn">letter count</button>
+            <p id="para">letter:</p>
+            <!-- <i  onclick="count()" class="fa-light fa-hand-point-up"></i> -->
+        </div>
+       <input type="number" id="input" placeholder="Enter FontSize">
+       <button id="button" onclick="Apply()">Apply</button>
+        <div>
+            <textarea id="text"></textarea>
+        </div>
+       
+    </div>
+    <script>
+        var inputvalue=document.getElementById("input").value;
+        var getText=document.getElementById("text");
+function Apply(){
+      var inputvalue=document.getElementById("input").value;
+        var getText=document.getElementById("text");
+      var see=   getText.style.fontSize=`${inputvalue}px`;
+     }
+          
+         
+        function underline(){        
+           getText.style.textDecoration="underline";
+        }
+        function italic(){        
+           getText.style.fontStyle="italic";
+        }
+        function bold(){        
+           getText.style.fontWeight="bold";
+        }
+        function center(){        
+           getText.style.textAlign="center";
+        }
+        function right(){
+            getText.style.textAlign="right"
+        }
+        function count(){
+         var getvalue=getText.value;
+         var arry= getvalue.split(" ");
+         var counting=arry.length;
+         var takepara=document.getElementById("para1");
+         var show= takepara.innerHTML="word:"+counting
+        }
+        function letterCounting(){
+         var getvalue=getText.value;
+         var arry= getvalue.split("");
+         var counting=arry.length;
+         var takepara=document.getElementById("para");
+         var show= takepara.innerHTML="letter:"+counting
+         
+        }
+    </script>
+</body>
+</html>
